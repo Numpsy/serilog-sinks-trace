@@ -32,7 +32,7 @@ class TraceSink : ILogEventSink
     public void Emit(LogEvent logEvent)
     {
         if (logEvent == null) throw new ArgumentNullException(nameof(logEvent));
-        var sr = new StringWriter();
+        using var sr = new StringWriter();
         _textFormatter.Format(logEvent, sr);
 
         var text = sr.ToString().Trim();
