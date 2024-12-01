@@ -20,7 +20,7 @@ using Serilog.Formatting;
 
 namespace Serilog.Sinks.Trace;
 
-class TraceSink : ILogEventSink
+sealed class TraceSink : ILogEventSink
 {
     readonly ITextFormatter _textFormatter;
 
